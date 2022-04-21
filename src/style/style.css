@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ededf1;
+}
+
+header {
+    background: #460083;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Montserrat Alternates';
+    font-weight: 400;
+    margin-bottom: 70px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.nameCompany {
+    font-family: 'Montserrat Alternates';
+    font-weight: 300;
+    color: #4c158c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.orderPanel {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nameBlock {
+    padding: 30px;
+}
+
+.sort__panel {
+    display: flex;
+    align-items: center;
+    padding: 0px 40px 30px 40px;
+    gap: 0px;
+    
+
+}
+
+.left-border-round {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.right-border-round {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.inpDate {
+    margin-top: 10px;
+    padding: 7px 20px 7px 20px;
+    border: 1px solid #e6e6eb;
+    font-family: 'Roboto',sans-serif;
+    background-color: white;
+}
+
+.checkPromocode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: #ededf1;
+    padding: 6.5px 20px 6.5px 20px;
+    border: 1px solid #e6e6eb;
+    font-size: 14px;
+}
+
+.unvisible {
+    color: white;
+}
+
+.search-button {
+    margin-top: 10px;
+    padding: 6px 20px 6px 40px;
+    font-weight: 500;
+    font-family: 'Roboto',sans-serif;
+    color: white;
+    background: #460083;
+    border: 0px solid #460083;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.sortOrderPanel {
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #ededf1; 
+}
+
+.orderShowPanel {
+    padding: 30px;
+}
+
+.select_panel_order {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.a_panel_order {
+    text-decoration: none;
+    color: #bec5d0;
+}
+
+.b {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.a_panel_order:active {
+    color: #4c158c;
+    border-bottom: 2px solid #460083;
+}
+
+.order_show_content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+}
+
+.order_content > img {
+    box-sizing: border-box;
+    object-fit: fill;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.order_content {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.select_panel_order {
+    padding-bottom: 40px;
+    
+}
+
+.name_hotel {
+    font-size: 18px;
+    color: #460083;
+    font-weight: 500;
+}
+
+.order_info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cost_hotel {
+    font-size: 18px;
+    color: #cfaf5d;
+    font-weight: 500;
+    text-align: right;
+}
+
+.r_ho {
+    text-align: right;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+  
+.m_t {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.bottom-line {
+    display: flex;
+    justify-content: space-between  ;
+    align-items: center;
+    padding: 10px;
+}
+
+.icons-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select_hotel {
+    padding: 10px 20px 10px 20px;
+    border: 0 solid #cfaf5d;
+    font-size: 18px;
+    border-radius: 5px;
+    background: #cfaf5d;
+    color: white;
+    font-weight: 600;
+}
+
+button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.star {
+    color: #fdc300;
+    font-size: 38px;
+    font-weight: bold;
+}
+
