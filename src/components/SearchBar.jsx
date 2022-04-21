@@ -18,16 +18,21 @@ function SearchBar () {
         <div className="inp-amount-people">
             <p>Взрослые</p>
             <select className="inpDate">
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+
             </select>
         </div>
 
         <div className="inp-amount-people">
             <p>Дети</p>
             <select className="inpDate">
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
+               <option>-</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+
             </select>
         </div>
 
