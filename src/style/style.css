@@ -129,7 +129,7 @@ header {
     font-weight: 500;
 }
 
-.a_panel_order:active {
+.a-panel-order:active {
     color: #4c158c;
     border-bottom: 2px solid #460083;
 }
@@ -140,7 +140,7 @@ header {
     gap: 30px;
 }
 
-.order_content > img {
+.order-content > img {
     box-sizing: border-box;
     object-fit: fill;
     width: 100%;
@@ -148,7 +148,7 @@ header {
     border-top-left-radius: 10px;
 }
 
-.order_content {
+.order-content {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -157,26 +157,26 @@ header {
     
 }
 
-.name_hotel {
+.name-hotel {
     font-size: 18px;
     color: #460083;
     font-weight: 500;
 }
 
-.order_info {
+.order-info {
     padding: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-.cost_hotel {
+.cost-hotel {
     font-size: 18px;
     color: #cfaf5d;
     font-weight: 500;
     text-align: right;
 }
 
-.r_ho {
+.r-ho {
     text-align: right;
 }
 
@@ -212,7 +212,7 @@ header {
     gap: 10px;
 }
 
-.select_hotel {
+.select-hotel {
     padding: 10px 20px 10px 20px;
     border: 0 solid #cfaf5d;
     font-size: 18px;

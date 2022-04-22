@@ -3,18 +3,18 @@ import React from "react";
 function Hotels (props) {
 
     return (
-        <article className="order_content">
+        <article className="order-content">
             <img src="https://i.pinimg.com/originals/1e/cb/60/1ecb60097949938d0db94d0695752216.jpg" alt="" srcset="" />
             
-            <div className="order_info">
+            <div className="order-info">
                 <div>
-                    <p className="name_hotel">{props.hotel.type}</p>
-                    <p className="l_ho">{props.hotel.square + " кв.м"}</p>
+                    <p className="name-hotel">{props.hotel.type}</p>
+                    <p className="l-ho">{props.hotel.square + " кв.м"}</p>
                 </div>
 
                 <div>
-                    <p className="cost_hotel">от {props.hotel.cost} Р</p>
-                    <p className="r_ho">1 ночь / 2 гостя</p>
+                    <p className="cost-hotel">от {props.hotel.cost} Р</p>
+                    <p className="r-ho">1 ночь / 2 гостя</p>
                 </div>
             </div>
 
@@ -26,7 +26,7 @@ function Hotels (props) {
                     <p>До 3-х мест</p>
                 </div>
 
-                <button className="select_hotel">Выбрать<span className="material-symbols-outlined m_t">arrow_forward_ios</span></button>
+                <button className="select-hotel">Выбрать<span className="material-symbols-outlined m_t">arrow_forward_ios</span></button>
             </div>
         </article>
     )
