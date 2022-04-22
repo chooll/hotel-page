@@ -26,7 +26,7 @@ header {
     margin: auto;
 }
 
-.nameCompany {
+.name-company {
     font-family: 'Montserrat Alternates';
     font-weight: 300;
     color: #4c158c;
@@ -38,12 +38,12 @@ header {
 }
 
 
-.orderPanel {
+.order-panel {
     background-color: white;
     font-family: 'Roboto', sans-serif;
 }
 
-.nameBlock {
+.name-block {
     padding: 30px;
 }
 
@@ -104,22 +104,22 @@ header {
     gap: 30px;
 }
 
-.sortOrderPanel {
+.sort-order-panel {
     padding-bottom: 20px;
     border-bottom: 3px dashed #ededf1; 
 }
 
-.orderShowPanel {
+.order-show-panel {
     padding: 30px;
 }
 
-.select_panel_order {
+.select-panel-order {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
-.a_panel_order {
+.a-panel-order {
     text-decoration: none;
     color: #bec5d0;
 }
@@ -134,7 +134,7 @@ header {
     border-bottom: 2px solid #460083;
 }
 
-.order_show_content {
+.order-show-content {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 30px;
@@ -152,7 +152,7 @@ header {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.select_panel_order {
+.select-panel-order {
     padding-bottom: 40px;
     
 }

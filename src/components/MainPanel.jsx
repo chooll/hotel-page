@@ -11,9 +11,9 @@ function MainPanel() {
     ]);
 
     return (
-        <div className="mainPanel container">
+        <div className="main-panel container">
 
-            <div className="nameCompany">
+            <div className="name-company">
                 <h1>Omega</h1>
                 <div>
                     <span className="material-symbols-outlined star">grade</span>
@@ -22,26 +22,26 @@ function MainPanel() {
                 </div>
             </div>
 
-            <div className="orderPanel">
+            <div className="order-panel">
 
                 {/* Верхняя панель сортировки */}
-                <div className="sortOrderPanel">
-                    <h3 className="nameBlock">Поиск по номера в отеле:</h3>
+                <div className="sort-order-panel">
+                    <h3 className="name-block">Поиск по номера в отеле:</h3>
                     <SearchBar />
                 </div>
 
                 {/* Панель выбора  */}
-                <div className="orderShowPanel">
+                <div className="order-show-panel">
 
-                    <div className="select_panel_order">
+                    <div className="select-panel-order">
                         <p className="b">Выбор</p>
-                        <a className="a_panel_order" href="#1">По номерам</a>
-                        <a className="a_panel_order" href="#2">По тарифам</a>
+                        <a className="a-panel-order" href="#1">По номерам</a>
+                        <a className="a-panel-order" href="#2">По тарифам</a>
                     </div>
 
                     
                     {/* Блок с отелями */}
-                    <div className="order_show_content">
+                    <div className="order-show-content">
                         {hotelList.map(h => 
                             <Hotels hotel={h} key={h.id}/>)
                         }
