@@ -7,17 +7,17 @@ function SearchBar () {
         
         <div className="inp-date-start">
             <p>Дата заезда</p>
-            <input className="inpDate  left-border-round" type="date" defaultValue={"2022-04-15"}/>
+            <input className="inp-date left-border-round" type="date" defaultValue={"2022-04-15"}/>
         </div>
 
         <div className="inp-date-end">
             <p>Дата выезда</p>
-            <input className="inpDate" type="date" defaultValue={"2022-04-15"}/>
+            <input className="inp-date" type="date" defaultValue={"2022-04-15"}/>
         </div>
 
         <div className="inp-amount-people">
             <p>Взрослые</p>
-            <select className="inpDate">
+            <select className="inp-date">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -27,7 +27,7 @@ function SearchBar () {
 
         <div className="inp-amount-people">
             <p>Дети</p>
-            <select className="inpDate">
+            <select className="inp-date">
                <option>-</option>
                 <option>1</option>
                 <option>2</option>
@@ -46,7 +46,7 @@ function SearchBar () {
 
         <div className="button-sort">
             <p className="unvisible">Поиск</p>
-            <button className="search-button right-border-round">Найти номер<span class="material-symbols-outlined">search</span></button>
+            <button className="search-button right-border-round">Найти номер<span className="material-symbols-outlined">search</span></button>
         </div>
 
     </div>
