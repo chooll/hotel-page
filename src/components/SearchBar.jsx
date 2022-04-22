@@ -1,4 +1,6 @@
 import React from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css"
 
 function SearchBar () { 
 
@@ -12,6 +14,7 @@ function SearchBar () {
 
         <div className="inp-date-end">
             <p>Дата выезда</p>
+            {/* <DatePicker selected={"12.04.2022"}/>  */}
             <input className="inp-date" type="date" defaultValue={"2022-04-15"}/>
         </div>
 
