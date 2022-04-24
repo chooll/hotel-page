@@ -4,7 +4,7 @@ function Hotels (props) {
 
     return (
         <article className="order-content">
-            <img src="https://i.pinimg.com/originals/1e/cb/60/1ecb60097949938d0db94d0695752216.jpg"/>
+            <img src={props.hotel.image1}/>
             
             <div className="order-info">
                 <div>

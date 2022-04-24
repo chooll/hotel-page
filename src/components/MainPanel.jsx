@@ -5,9 +5,12 @@ import SearchBar from "./SearchBar.jsx";
 function MainPanel() { 
 
     let [hotelList, setHotelList] = useState([
-        {id: 1, type: "Стандарт", square: 25, cost: "5 000"},
-        {id: 2, type: "Премиум", square: 45, cost: "15 000"},
-        {id: 3, type: "Люкс", square: 55, cost: "25 000"},
+        {id: 1, type: "Стандарт", square: 25, cost: "5 000", 
+            image1: "https://i.pinimg.com/originals/1e/cb/60/1ecb60097949938d0db94d0695752216.jpg"},
+        {id: 2, type: "Премиум", square: 45, cost: "15 000", 
+            image1: "https://i.pinimg.com/originals/1e/cb/60/1ecb60097949938d0db94d0695752216.jpg"},
+        {id: 3, type: "Люкс", square: 55, cost: "25 000", 
+            image1: "https://i.pinimg.com/originals/1e/cb/60/1ecb60097949938d0db94d0695752216.jpg"},
     ]);
 
     return (

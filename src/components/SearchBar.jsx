@@ -9,13 +9,12 @@ function SearchBar () {
         
         <div className="inp-date-start">
             <p>Дата заезда</p>
-            <input className="inp-date left-border-round" type="date" defaultValue={"2022-04-15"}/>
+            <DatePicker className="inp-date" selected={new Date()}/> 
         </div>
 
         <div className="inp-date-end">
             <p>Дата выезда</p>
-            {/* <DatePicker selected={"12.04.2022"}/>  */}
-            <input className="inp-date" type="date" defaultValue={"2022-04-15"}/>
+            <DatePicker className="inp-date" selected={new Date()}/> 
         </div>
 
         <div className="inp-amount-people">

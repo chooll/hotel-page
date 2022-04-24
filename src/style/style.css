@@ -227,6 +227,11 @@ button {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #460083;
 }
 
 .star {
@@ -235,3 +240,6 @@ button {
     font-weight: bold;
 }
 
+.carousel-container {
+    width: 100%;
+}
