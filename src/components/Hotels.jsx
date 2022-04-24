@@ -1,10 +1,18 @@
 import React from "react";
+import Carousel from "./Carousel.jsx";
 
 function Hotels (props) {
 
     return (
         <article className="order-content">
+            <Carousel>
             <img src={props.hotel.image1}/>
+            <img src={props.hotel.image2}/>
+            <img src={props.hotel.image1}/>
+
+            </Carousel>
+
+
             
             <div className="order-info">
                 <div>

@@ -242,4 +242,39 @@ button:hover{
 
 .carousel-container {
     width: 100%;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.show-windows {
+    width: 100%;
+    overflow: hidden;
+}
+
+.all-pages {
+    display: flex;
+    transition: translate;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.all-pages > img {
+    box-sizing: border-box;
+    object-fit: fill;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    
+}
+
+.arrow-left {
+    cursor: pointer;
+}
+
+.arrow-right {
+    cursor: pointer;
 }
