@@ -46,7 +46,7 @@ function MainPanel() {
 
                     
                     {/* Блок с отелями */}
-                    <div className="order-show-content">
+                    <div className="order-show-content round-order-content">
                         {hotelList.map(h => 
                             <Hotels hotel={h} key={h.id}/>)
                         }

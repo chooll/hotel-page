@@ -242,15 +242,15 @@ button:hover{
 
 .carousel-container {
     width: 100%;
-    display: flex;
     align-items: center;
-
-
+    position: relative;
 }
 
 .show-windows {
     width: 100%;
     overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .all-pages {
@@ -259,22 +259,44 @@ button:hover{
     transition-property: transform;
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
+    position: relative;
 }
 
 .all-pages > img {
     box-sizing: border-box;
     object-fit: fill;
     width: 100%;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
     display: flex;
-    
+
 }
 
 .arrow-left {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    align-items: center;
+    width: 15%;
+    justify-content: center;
+    color: white;
     cursor: pointer;
 }
 
 .arrow-right {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    align-items: center;
+    width: 15%;
+    justify-content: center;
+    right: 0;
+    color: white;
     cursor: pointer;
+
+}
+
+.round-order-content {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }

@@ -8,16 +8,15 @@ function Carousel ({children}) {
 
     const handleLeftArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset + 364;
+            const newOffset = currentOffset + 394;
             return Math.min(newOffset, 0);
         })
     }
 
     const handleRightArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset - 364;
-            console.log(newOffset, Math.max(newOffset, -728));
-            return Math.max(newOffset, -728);
+            const newOffset = currentOffset - 394;
+            return Math.max(newOffset, -394 * 2);
         })
     }
 
@@ -36,15 +35,19 @@ function Carousel ({children}) {
 
     return (
         <div className="carousel-container">
-            <FaChevronLeft className="arrow-left" onClick={handleLeftArrowClick}/>
+            
+
             <div className="show-windows">
-                <div className="all-pages" style={
+                <div className="all-pages round-order-content" style={
                     {transform: `translateX(${offset}px)`
                 }}>
                     {pages}
                 </div>
             </div>
+                
+            <FaChevronLeft className="arrow-left" onClick={handleLeftArrowClick}/>
             <FaChevronRight className="arrow-right" onClick={handleRightArrowClick}/>
+            
 
         </div>
     ); 

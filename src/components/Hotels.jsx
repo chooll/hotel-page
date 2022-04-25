@@ -4,7 +4,7 @@ import Carousel from "./Carousel.jsx";
 function Hotels (props) {
 
     return (
-        <article className="order-content">
+        <article className="order-content round-order-content">
             <Carousel>
             <img src={props.hotel.image1}/>
             <img src={props.hotel.image2}/>
