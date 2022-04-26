@@ -15,9 +15,11 @@ function MainPanel() {
             image1: "https://i.pinimg.com/originals/1e/cb/60/1ecb60097949938d0db94d0695752216.jpg"},
     ]);
 
+
+
     return (
         <div className="main-panel container">
-
+            
             <div className="name-company">
                 <h1>Omega</h1>
                 <div>

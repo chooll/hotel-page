@@ -1,0 +1,25 @@
+.child-modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(68, 68, 68, 0.26);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25ms;
+}
+
+.content-modal {
+    padding: 20px;
+    background-color: white;
+}
+
+.active {
+    opacity: 100%;
+    pointer-events: all;
+}

@@ -1,15 +1,19 @@
 import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
+import SelectField from "./SelectField";
 
 function SearchBar () { 
-
+ 
+    // Отвечает за ввод даты заезда
     const [inSelectedDate, inSetSelectedDate] = useState(new Date());
-    const [outSelectedDate, outSetSelectedDate] = useState(new Date());
 
+    // Отвечает за ввод даты выезда
+    const [outSelectedDate, outSetSelectedDate] = useState(new Date());
+    
+    // Модальное окно с детьми
     return (
     <div className="sort__panel">
-        
         <div className="inp-date-start">
             <p>Дата заезда</p>
             <DatePicker className="inp-date" 
@@ -40,13 +44,13 @@ function SearchBar () {
 
         <div className="inp-amount-people">
             <p>Дети</p>
-            <select className="inp-date">
+            <SelectField options={["-", "1", "2", "3", "4"]}/>
+            {/* <select className="inp-date" onChange={openModal}>
                <option>-</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
-
-            </select>
+            </select> */}
         </div>
 
         <div className="inp-promocode">
