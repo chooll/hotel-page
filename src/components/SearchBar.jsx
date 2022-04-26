@@ -1,20 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
 
 function SearchBar () { 
+
+    const [inSelectedDate, inSetSelectedDate] = useState(new Date());
+    const [outSelectedDate, outSetSelectedDate] = useState(new Date());
 
     return (
     <div className="sort__panel">
         
         <div className="inp-date-start">
             <p>Дата заезда</p>
-            <DatePicker className="inp-date" selected={new Date()}/> 
+            <DatePicker className="inp-date" 
+                selected={inSelectedDate} 
+                onChange={date => inSetSelectedDate(date)}
+                dateFormat='dd - MM - yyyy'
+                minDate={new Date()}/> 
         </div>
 
         <div className="inp-date-end">
             <p>Дата выезда</p>
-            <DatePicker className="inp-date" selected={new Date()}/> 
+            <DatePicker className="inp-date" 
+                selected={outSelectedDate}
+                onChange={date => outSetSelectedDate(date)}
+                dateFormat='dd - MM - yyyy'
+                minDate={inSelectedDate}/> 
         </div>
 
         <div className="inp-amount-people">

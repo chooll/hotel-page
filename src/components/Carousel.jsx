@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Children,cloneElement, setOffset } from "react";
+import React, { useState, useEffect, Children,cloneElement } from "react";
 import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
 
 function Carousel ({children}) { 
@@ -8,15 +8,15 @@ function Carousel ({children}) {
 
     const handleLeftArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset + 394;
+            const newOffset = currentOffset + 393.4;
             return Math.min(newOffset, 0);
         })
     }
 
     const handleRightArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset - 394;
-            return Math.max(newOffset, -394 * 2);
+            const newOffset = currentOffset - 393.4;
+            return Math.max(newOffset, -393.4 * 2);
         })
     }
 
