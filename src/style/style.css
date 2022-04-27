@@ -300,3 +300,89 @@ button:hover{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.child-panel {
+    margin-top: 10px;
+    padding: 6px 45px 5px 45px;
+    text-align: center;
+    border: 1px solid #e6e6eb;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.panel-setting-child {
+    position: absolute;
+    width: 350px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid #e6e6eb;
+    display: none;
+}
+
+.active {
+    transition: 1s;
+    display: block;
+}
+
+.amount-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px dashed #e6e6eb;
+
+}
+
+.p-butt {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px dashed #e6e6eb;
+    border-radius: 50%;
+}
+
+.set-age-child {
+    padding: 15px;
+}
+
+.bottom-block {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.set-child {
+    margin: 10px;
+}
+
+.set-child-age  {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.set-child-age > select {
+    padding: 5px;
+    width: 65%;
+    border: 1px solid #e6e6eb;
+    text-align: left;
+}
+
+.title-age {
+    padding: 10px;
+}
+
+.bottom-block { 
+    display: flex;
+    gap: 10px;
+}
