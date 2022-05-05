@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ChildAge ({n, v, setValue}) {
+function ChildAge ({n, selectedIndex, v, setValue}) {
     const addValueInMassive = (value) => {
         let copy = v; 
-        copy.push(value);
+        copy[selectedIndex] = value;
         setValue(copy);
     }
     return (

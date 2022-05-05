@@ -8,11 +8,26 @@ function ChildPanel ({value, setValue}){
     
     const [childAge, setChildAge] = useState([]);
 
+    const addValue = (arr, value) => { 
+        let copy = arr; 
+        copy.push(value);
+        return copy;
+    };
+
+    const subValue = (arr, value) => {
+        let copy = arr;
+        copy.pop(); 
+        return copy;
+    }
+
     const addChild = () => {
         if (amountChild != 4) {
             setAmountChild(amountChild + 1);
-                setChildAge([...childAge, <ChildAge key={amountChild} v={value} setValue={setValue} n={amountChild + 1}/>])
+                
+                setValue([...value, 1]);
+                setChildAge([...childAge, <ChildAge key={amountChild} selectedIndex={value.length} v={value} setValue={setValue} n={amountChild + 1}/>])
         }
+        console.log(value);
     }
 
     const agreeButtonClick = () => { 
@@ -29,12 +44,16 @@ function ChildPanel ({value, setValue}){
     const subChild = () => {
         if (amountChild != 0) {
             setAmountChild(amountChild - 1);
+            setValue(subValue);
+            
             if (childAge.length != 0) {
                 let copy = childAge;
                 copy.pop();
                 setChildAge(copy);
             }
+
         }
+        console.log(value);
     }
 
     return (

@@ -55,9 +55,8 @@ function SearchBar () {
         for (let i = 0; i != value.length; i++) {
             p += '.0' + dateIn.split('.')[0] + dateIn.split('.')[1] + (dateIn.split('.')[2] - value[i]) + '0'
         }
-        
-        let f7 = subDateDay(outSelectedDate, inSelectedDate);
 
+        let f7 = subDateDay(outSelectedDate, inSelectedDate);
         console.log(`/hotel24?xml=31&action=price&tid=211&flt=100410000050&flt2=100510000863&id_price=-1&p=${p}&data=${dateIn}&d2=1&f7=${f7}&F4=199010240062&promocode=&mode=ROOMS`)
     };
 
