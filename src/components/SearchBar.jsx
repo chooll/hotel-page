@@ -4,9 +4,9 @@ import "react-datepicker/dist/react-datepicker.css"
 import ChildPanel from "./ChildPanel.jsx";
 
 function SearchBar () { 
+    const [value, setValue] = useState([]);
 
-    const [nDate, setNDate]  = useState(0);
-
+    // Форматирование даты в строку
     const _formatDate = (date) => {
         var dd = date.getDate();
         if (dd < 10) dd = '0' + dd;
@@ -18,10 +18,13 @@ function SearchBar () {
         
         return dd + '.' + mm + '.' + yy;
     }
+
     // Отвечает за ввод даты заезда
     const [inSelectedDate, inSetSelectedDate] = useState(new Date());
     // Отвечает за ввод даты выезда
     const [outSelectedDate, outSetSelectedDate] = useState(new Date());
+
+    // Количество выбранных взрослых
     const [selectHuman, setSelectHuman] = useState(1);
 
     const checkDate = (date) => {
@@ -34,6 +37,7 @@ function SearchBar () {
         }
     }
 
+    // Нахождение разницы между датами в днях
     const subDateDay = (date_1, date_2) => { return (date_1 - date_2) / (3600 * 24 * 1000) }
 
     const sendRequest = () => {
@@ -48,6 +52,10 @@ function SearchBar () {
             }
         } 
 
+        for (let i = 0; i != value.length; i++) {
+            p += '.0' + dateIn.split('.')[0] + dateIn.split('.')[1] + (dateIn.split('.')[2] - value[i]) + '0'
+        }
+        
         let f7 = subDateDay(outSelectedDate, inSelectedDate);
 
         console.log(`/hotel24?xml=31&action=price&tid=211&flt=100410000050&flt2=100510000863&id_price=-1&p=${p}&data=${dateIn}&d2=1&f7=${f7}&F4=199010240062&promocode=&mode=ROOMS`)
@@ -85,7 +93,7 @@ function SearchBar () {
 
         <div className="inp-amount-people">
             <p>Дети</p>
-            <ChildPanel /> 
+            <ChildPanel value={value} setValue={setValue}/> 
         </div>
 
         <div className="inp-promocode">

@@ -1,30 +1,38 @@
 import React, {useState} from "react";
 import ChildAge from "./ChildAge";
 
-function ChildPanel( ){ 
+function ChildPanel ({value, setValue}){ 
 
     const [showChildPanel, setShowChildPanel] = useState(false);
     const [amountChild, setAmountChild] = useState(0);
-    let [childAge, setChildAge] = useState([]);
+    
+    const [childAge, setChildAge] = useState([]);
 
     const addChild = () => {
         if (amountChild != 4) {
             setAmountChild(amountChild + 1);
-                setChildAge([...childAge, <ChildAge key={amountChild} n={amountChild + 1}/>])
+                setChildAge([...childAge, <ChildAge key={amountChild} v={value} setValue={setValue} n={amountChild + 1}/>])
         }
     }
 
-    const retAdd = () => {
-        return (
-            <ChildAge n={amountChild} />
-        )
+    const agreeButtonClick = () => { 
+        setShowChildPanel(false);
+    }
+
+    const cancelButtonClick = () => {
+        setShowChildPanel(false);
+        setAmountChild(0);
+        setChildAge([]);
+        setValue([]);
     }
 
     const subChild = () => {
         if (amountChild != 0) {
             setAmountChild(amountChild - 1);
             if (childAge.length != 0) {
-                setChildAge(...childAge, ...childAge.pop())
+                let copy = childAge;
+                copy.pop();
+                setChildAge(copy);
             }
         }
     }
@@ -51,8 +59,8 @@ function ChildPanel( ){
 
             </div>
             <div className="bottom-block">
-                <button className="button a" onClick={()=>setShowChildPanel(false)}>Отменить</button>
-                <button className="button c" onClick={() => setShowChildPanel(false)}>Применить</button>
+                <button className="button a" onClick={cancelButtonClick}>Отменить</button>
+                <button className="button c" onClick={agreeButtonClick}>Применить</button>
             </div>
             </div>
         </div>

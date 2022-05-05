@@ -1,11 +1,16 @@
 import React from 'react';
 
-function ChildAge ({n}) {
-
+function ChildAge ({n, v, setValue}) {
+    const addValueInMassive = (value) => {
+        let copy = v; 
+        copy.push(value);
+        setValue(copy);
+    }
     return (
         <div className="set-child-age">
             <p>{n + " ребенок"}</p>
-            <select>
+            <select onChange={event => addValueInMassive(event.target.value)}>
+                <option disabled>Укажите возраст ребенка</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

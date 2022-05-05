@@ -303,12 +303,13 @@ button:hover{
 
 .child-panel {
     margin-top: 10px;
-    padding: 6px 45px 5px 45px;
+    padding: 7px 45px 6px 45px;
     text-align: center;
     border: 1px solid #e6e6eb;
     position: relative;
     display: grid;
     grid-template-rows: auto auto;
+    font-size: 14px;
 }
 
 .panel-setting-child {
