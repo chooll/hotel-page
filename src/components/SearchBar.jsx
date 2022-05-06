@@ -36,7 +36,6 @@ function SearchBar () {
             inSetSelectedDate(date)
         }
     }
-
     // Нахождение разницы между датами в днях
     const subDateDay = (date_1, date_2) => { return (date_1 - date_2) / (3600 * 24 * 1000) }
 
@@ -56,8 +55,10 @@ function SearchBar () {
             p += '.0' + dateIn.split('.')[0] + dateIn.split('.')[1] + (dateIn.split('.')[2] - value[i]) + '0'
         }
 
+        console.log(value);
+
         let f7 = subDateDay(outSelectedDate, inSelectedDate);
-        console.log(`/hotel24?xml=31&action=price&tid=211&flt=100410000050&flt2=100510000863&id_price=-1&p=${p}&data=${dateIn}&d2=1&f7=${f7}&F4=199010240062&promocode=&mode=ROOMS`)
+        console.log(`/hotel24?xml=31&action=price&tid=211&flt=100410000050&flt2=100510000863&id_price=-1&p=${p}&data=${dateIn}&d2=1&f7=${f7}&F4=199010179715&F4=199010240061&F4=199010219291&F4=199010240062&promocode=&mode=ROOMS`)
     };
 
     return (
