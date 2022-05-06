@@ -1,33 +1,19 @@
 import React, {useState} from "react";
 import ChildAge from "./ChildAge";
+import {addValueInArray, subValueInArray} from '../Utils';
 
 function ChildPanel ({value, setValue}){ 
 
     const [showChildPanel, setShowChildPanel] = useState(false);
     const [amountChild, setAmountChild] = useState(0);
-    
     const [childAge, setChildAge] = useState([]);
-
-    const addValue = (arr, value) => { 
-        let copy = arr; 
-        copy.push(value);
-        return copy;
-    };
-
-    const subValue = (arr, value) => {
-        let copy = arr;
-        copy.pop(); 
-        return copy;
-    }
 
     const addChild = () => {
         if (amountChild != 4) {
             setAmountChild(amountChild + 1);
-                
-                setValue([...value, 1]);
-                setChildAge([...childAge, <ChildAge key={amountChild} selectedIndex={value.length} v={value} setValue={setValue} n={amountChild + 1}/>])
+            setValue(addValueInArray(value, 1));
+            setChildAge([...childAge, <ChildAge key={amountChild} selectedIndex={amountChild} v={value} setValue={setValue} n={amountChild + 1}/>])
         }
-        console.log(value);
     }
 
     const agreeButtonClick = () => { 
@@ -44,16 +30,12 @@ function ChildPanel ({value, setValue}){
     const subChild = () => {
         if (amountChild != 0) {
             setAmountChild(amountChild - 1);
-            setValue(subValue);
+            setValue(subValueInArray(value));
             
             if (childAge.length != 0) {
-                let copy = childAge;
-                copy.pop();
-                setChildAge(copy);
+                setChildAge(subValueInArray(childAge));
             }
-
         }
-        console.log(value);
     }
 
     return (

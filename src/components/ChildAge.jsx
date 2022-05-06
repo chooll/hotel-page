@@ -2,10 +2,11 @@ import React from 'react';
 
 function ChildAge ({n, selectedIndex, v, setValue}) {
     const addValueInMassive = (value) => {
-        let copy = v; 
+        let copy = v;
         copy[selectedIndex] = value;
         setValue(copy);
     }
+
     return (
         <div className="set-child-age">
             <p>{n + " ребенок"}</p>
