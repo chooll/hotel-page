@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Hotels from "./Hotels.jsx";
 import SearchBar from "./SearchBar.jsx";
 import NameCompany from "./NameCompany.jsx";
+import Loader from "./Loader.jsx";
 
 function MainPanel() { 
     const [resource, setResource] = useState([]); 
+    const [postLoad, setPostLoad] = useState(false);
 
     const isResourceEmpty = () => {
         return resource.length > 0;
@@ -26,7 +28,7 @@ function MainPanel() {
                 {/* Верхняя панель сортировки */}
                 <div className="sort-order-panel">
                     <h3 className="name-block">Поиск по номера в отеле:</h3>
-                    <SearchBar setResource={setResource}/>
+                    <SearchBar setResource={setResource} setPostLoad={setPostLoad}/>
                 </div>
 
                 {/* Панель выбора  */}
@@ -37,13 +39,20 @@ function MainPanel() {
                         <a className="a-panel-order" href="#2">По тарифам</a>
                     </div>
 
+                    {
+                       postLoad 
+                       ? 
+                       <div style={{display: 'flex', justifyContent: 'center'}}><Loader/></div>
+                       :
+                       <h3 className={isResourceEmpty() ? "non-visible" : "active-info"}>Здесь ничего нет</h3>
+                    }
                     
                     {/* Блок с отелями */}
                     <div className="order-show-content round-order-content">
                         {
                             resource.map (room => outRoomsInfo(room))
                         }
-                        <h3 className={isResourceEmpty() ? "non-visible" : "active-info"}>Здесь ничего нет</h3>
+
                     </div>
                 </div>
 

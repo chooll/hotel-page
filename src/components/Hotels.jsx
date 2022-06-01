@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import Carousel from "./Carousel.jsx";
+import ModalWin from "./ModalWin.jsx";
 
 function Hotels ({hotel}) {
 
     const [activeFullInfo, setActiveFullInfo] = useState(false);
+    const [modalActive, setModalActive] = useState(false); 
 
     const name = hotel["name"];
     const area = hotel["area"];
@@ -22,6 +24,8 @@ function Hotels ({hotel}) {
 
     return (
         <article className="order-content round-order-content">
+    
+            <ModalWin active={modalActive} setActive={setModalActive} content={about}/>
             <Carousel fullScreen={false} sizeImage={394.3} length={images.length}>
                 { images.map ( img => <img src={add_i+img} key={img}/>) }
             </Carousel>
@@ -30,7 +34,7 @@ function Hotels ({hotel}) {
                 <div>
                     <p className="name-hotel">{name}</p>
                     <p className="l-ho">{area + " кв.м"}</p>
-                    <p className="show-full-info" onClick={changeActiveFullInfo}>Подробнее..</p>
+                    <p className="show-full-info" onClick={() => setModalActive(true)}>Подробнее..</p>
                 </div>
 
                 <div>
@@ -38,10 +42,6 @@ function Hotels ({hotel}) {
                     <p className="r-ho">1 ночь / 2 гостя</p>
                 </div>
 
-            </div>
-
-            <div className={activeFullInfo ? "active-info full-info" : "full-info"}>
-                {/* <div dangerouslySetInnerHTML={{ __html: about}}></div> */}
             </div>
 
             <div className="bottom-line">
