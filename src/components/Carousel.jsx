@@ -1,22 +1,45 @@
 import React, { useState, useEffect, Children,cloneElement } from "react";
 import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
 
-function Carousel ({children}) { 
+function Carousel ({children, sizeImage, length}) { 
 
     const[pages, setPages] = useState([]);
     const[offset, setOffset] = useState(0); 
+    const [fullScreen, setFullScreen] = useState(false);
+    
+    function fullScreenChange() {
+        if (fullScreen) {
+            setFullScreen(false);
+            setOffset(0);
+        } else {
+            setFullScreen(true);
+        }
+    }
 
     const handleLeftArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset + 393.4;
-            return Math.min(newOffset, 0);
+            let newOffset = currentOffset;
+            if (fullScreen) {
+                newOffset += 1200;
+            } else {
+                newOffset += sizeImage;
+            }
+        return Math.min(newOffset, 0);
         })
     }
 
     const handleRightArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset - 393.4;
-            return Math.max(newOffset, -393.4 * 2);
+            let newOffset = currentOffset;
+            if (fullScreen) {
+                newOffset -= 1200;
+                return Math.max(newOffset, -1200 * (length - 1));
+
+            } else {
+                newOffset -= sizeImage;
+                return Math.max(newOffset, -sizeImage * (length - 1));
+
+            }
         })
     }
 
@@ -34,11 +57,11 @@ function Carousel ({children}) {
     }, [])
 
     return (
-        <div className="carousel-container">
+        <div className={fullScreen ? "full-screen carousel-container" : "carousel-container"}>
             
 
             <div className="show-windows">
-                <div className="all-pages round-order-content" style={
+                <div className="all-pages round-order-content" onClick={fullScreenChange} style={
                     {transform: `translateX(${offset}px)`
                 }}>
                     {pages}

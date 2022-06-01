@@ -136,7 +136,7 @@ header {
 
 .order-show-content {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -301,6 +301,20 @@ button:hover{
     border-top-right-radius: 10px;
 }
 
+
+.full-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;    
+    z-index: 1005;
+    max-width: 1200px;
+}
+
 .child-panel {
     margin-top: 10px;
     padding: 7px 45px 6px 45px;
@@ -333,6 +347,28 @@ button:hover{
     padding: 10px;
     border-bottom: 2px dashed #e6e6eb;
 
+}
+
+.show-full-info {
+    padding: 10px 0px 10px 0px;
+}
+
+.show-full-info:hover {
+    color: #460083;
+    cursor: pointer;
+}
+
+.full-info { 
+    padding: 10px;
+    display: none;
+}
+
+.active-info {
+    display: block;
+}
+
+.non-visible { 
+    display: none;
 }
 
 .p-butt {

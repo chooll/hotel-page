@@ -4,11 +4,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import ChildPanel from "./ChildPanel.jsx";
 import {subDateDay, formatDate, sendRequestForSearchHotel} from '../Utils.js';
 
-
-function SearchBar () { 
+function SearchBar ({setResource}) { 
 
     const getGetMaxDate = (date) => { return new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1); }
-
     const [value, setValue] = useState([]);
     // Отвечает за ввод даты заезда
     const [inSelectedDate, inSetSelectedDate] = useState(new Date());
@@ -16,7 +14,6 @@ function SearchBar () {
     const [outSelectedDate, outSetSelectedDate] = useState(getGetMaxDate(inSelectedDate));
     // Количество выбранных взрослых
     const [selectHuman, setSelectHuman] = useState(1);
-
 
     const checkDate = (date) => {
         if (date > outSelectedDate) {
@@ -73,9 +70,8 @@ function SearchBar () {
 
         <div className="button-sort">
             <p className="unvisible">Поиск</p>
-            <button onClick={() => sendRequestForSearchHotel(inSelectedDate, outSelectedDate, selectHuman, value)} className="search-button right-border-round">Найти номер<span className="material-symbols-outlined">search</span></button>
+            <button onClick={() => sendRequestForSearchHotel(inSelectedDate, outSelectedDate, selectHuman, value, setResource)} className="search-button right-border-round">Найти номер<span className="material-symbols-outlined">search</span></button>
         </div>
-
     </div>
     )
     

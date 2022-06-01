@@ -5,6 +5,7 @@ export const addValueInArray = (arr, value) => {
     return copy;
 };
 
+
 // Удаление последнего значения в списке
 export const subValueInArray = (arr) => {
     let copy = arr;
@@ -24,6 +25,7 @@ export const subDateDay = (date_1, date_2) => {
     return Math.ceil((date_1 - date_2) / (3600 * 24 * 1000)) 
 }
 
+
 // Форматирование даты в строку
 export const formatDate = (date) => {
     var dd = date.getDate();
@@ -34,25 +36,38 @@ export const formatDate = (date) => {
     return dd + '.' + mm + '.' + yy;
 }
 
-// Оптправка запроса для поиска номеров
-export const sendRequestForSearchHotel = (inSelectedDate, outSelectedDate, selectHuman, value) => { 
+export async function sendRequestForSearchHotel (inSelectedDate, outSelectedDate, selectHuman, value, setValue) {
     let age_man = 36;
     let dateIn = formatDate(inSelectedDate)
     let p  = '';
-
-    for (let i = 0; i != selectHuman; i++) {
+    for (let i = 0; i !== selectHuman; i++) {
         p += '0' + dateIn.split('.')[0] + dateIn.split('.')[1] + (dateIn.split('.')[2] - age_man) + '0';
-        if (i != selectHuman - 1) {
+        if (i !== selectHuman - 1) {
             p += '.';
         }
     } 
+    
 
-    for (let i = 0; i != value.length; i++) {
+    const val = (value) => { return {"rooms": value} };
+
+    for (let i = 0; i !== value.length; i++) {
         p += '.0' + dateIn.split('.')[0] + dateIn.split('.')[1] + (dateIn.split('.')[2] - value[i]) + '0'
     }
-
     let f7 = subDateDay(outSelectedDate, inSelectedDate);
-    console.log(value);
-    console.log(`/hotel24?xml=31&action=price&tid=211&flt=100410000050&flt2=100510000863&id_price=-1&p=${p}&data=${dateIn}&d2=1&f7=${f7}&F4=199010179715&F4=199010240061&F4=199010219291&F4=199010240062&promocode=&mode=ROOMS`)
 
+    var request = `http://localhost:9000/hotel24?xml=31&action=price&tid=211&flt=100410000050&flt2=100510000863&id_price=-1&p=${p}&data=${dateIn}&d2=1&f7=${f7}&F4=199010179715&F4=199010240061&F4=199010219291&F4=199010240062&promocode=&mode=ROOMS`;
+
+    getRequestVarieble(request).then(
+        data => {
+            return data;
+        }).then (r => {
+            setValue(r["rooms"]);
+        }
+    );
+}
+
+async function getRequestVarieble (request) {
+    let responce = await fetch(request); 
+    let data = await responce.json();
+    return data;
 }
