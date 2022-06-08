@@ -26,7 +26,7 @@ function Hotels ({hotel}) {
         <article className="order-content round-order-content">
     
             <ModalWin active={modalActive} setActive={setModalActive} content={about}/>
-            <Carousel fullScreen={false} sizeImage={394.3} length={images.length}>
+            <Carousel sizeImage={394.3} length={images.length}>
                 { images.map ( img => <img src={add_i+img} key={img}/>) }
             </Carousel>
 
@@ -39,7 +39,7 @@ function Hotels ({hotel}) {
 
                 <div>
                     <p className="cost-hotel">от {price} ₽</p>
-                    <p className="r-ho">1 ночь / 2 гостя</p>
+                    <p className="r-ho">1 ночь / {max_bed} гостя</p>
                 </div>
 
             </div>

@@ -1,20 +1,12 @@
 import React, { useState, useEffect, Children,cloneElement } from "react";
 import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
+import ModalCarousel from "./ModalCarousel";
 
 function Carousel ({children, sizeImage, length}) { 
 
     const[pages, setPages] = useState([]);
     const[offset, setOffset] = useState(0); 
     const [fullScreen, setFullScreen] = useState(false);
-    
-    function fullScreenChange() {
-        if (fullScreen) {
-            setFullScreen(false);
-            setOffset(0);
-        } else {
-            setFullScreen(true);
-        }
-    }
 
     const handleLeftArrowClick = () => {
         setOffset((currentOffset) => {
@@ -54,14 +46,16 @@ function Carousel ({children, sizeImage, length}) {
                 });
             }
         ))
-    }, [])
+    }, []);
+
+    const [active, setActive] = useState(false);
 
     return (
         <div className={fullScreen ? "full-screen carousel-container" : "carousel-container"}>
             
-
+            <ModalCarousel children={children} length={length} active={active} setActive={setActive}/>
             <div className="show-windows">
-                <div className="all-pages round-order-content" onClick={fullScreenChange} style={
+                <div className="all-pages round-order-content" onClick={() => setActive(true)} style={
                     {transform: `translateX(${offset}px)`
                 }}>
                     {pages}
