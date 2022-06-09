@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Carousel from "./Carousel.jsx";
 import ModalWin from "./ModalWin.jsx";
 
-function Hotels ({hotel}) {
+function Hotels ({hotel, amountPeople, subDate}) {
 
     const [activeFullInfo, setActiveFullInfo] = useState(false);
     const [modalActive, setModalActive] = useState(false); 
@@ -39,7 +39,7 @@ function Hotels ({hotel}) {
 
                 <div>
                     <p className="cost-hotel">от {price} ₽</p>
-                    <p className="r-ho">1 ночь / {max_bed} гостя</p>
+                    <p className="r-ho">{subDate} ночь / {amountPeople} гостя</p>
                 </div>
 
             </div>

@@ -7,6 +7,8 @@ import Loader from "./Loader.jsx";
 function MainPanel() { 
     const [resource, setResource] = useState([]); 
     const [postLoad, setPostLoad] = useState(false);
+    const [subDate, setSubDate] = useState(0); 
+    const [amountPeople, setAmountPeople] = useState(1); 
 
     const isResourceEmpty = () => {
         return resource.length > 0;
@@ -14,7 +16,7 @@ function MainPanel() {
 
     const outRoomsInfo = (room) => { 
         return ( 
-            <Hotels hotel={room} key={room["id_r"]}/> 
+            <Hotels subDate={subDate} amountPeople={amountPeople} hotel={room} key={room["id_r"]}/> 
         );
     }
 
@@ -28,7 +30,7 @@ function MainPanel() {
                 {/* Верхняя панель сортировки */}
                 <div className="sort-order-panel">
                     <h3 className="name-block">Поиск по номера в отеле:</h3>
-                    <SearchBar setResource={setResource} setPostLoad={setPostLoad}/>
+                    <SearchBar setResource={setResource} setPostLoad={setPostLoad} setAmountPeople={setAmountPeople} setSubDate={setSubDate}/>
                 </div>
 
                 {/* Панель выбора  */}
