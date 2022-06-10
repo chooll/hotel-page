@@ -4,7 +4,6 @@ import ModalWin from "./ModalWin.jsx";
 
 function Hotels ({hotel, amountPeople, subDate}) {
 
-    const [activeFullInfo, setActiveFullInfo] = useState(false);
     const [modalActive, setModalActive] = useState(false); 
 
     const name = hotel["name"];
@@ -18,8 +17,23 @@ function Hotels ({hotel, amountPeople, subDate}) {
     const add_i = "https://go.sochisirius.ru/pr_img/";
     const images = hotel["pic"]; 
 
-    const changeActiveFullInfo = () => {
-        return activeFullInfo ? setActiveFullInfo(false) : setActiveFullInfo(true);
+    const rigthNigthWord = (subDate) => { 
+        let t; 
+        if (subDate > 20) { 
+            t = subDate % 10;
+        } else { 
+            t = subDate; 
+        }
+        
+        if (t == 0) { 
+            return "ночей";
+        } else if (t == 1) { 
+            return "ночь";
+        } else if (t > 1 && t <= 4) { 
+            return "ночи";
+        } else if (t > 4) { 
+            return "ночей";
+        }
     }
 
     return (
@@ -39,7 +53,7 @@ function Hotels ({hotel, amountPeople, subDate}) {
 
                 <div>
                     <p className="cost-hotel">от {price} ₽</p>
-                    <p className="r-ho">{subDate} ночь / {amountPeople} гостя</p>
+                    <p className="r-ho">{subDate} {rigthNigthWord(subDate)} / {amountPeople} гостя</p>
                 </div>
 
             </div>
