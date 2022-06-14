@@ -36,7 +36,7 @@ export const formatDate = (date) => {
     return dd + '.' + mm + '.' + yy;
 }
 
-export async function sendRequestForSearchHotel (inSelectedDate, outSelectedDate, selectHuman, value, setValue, setPostLoad) {
+export async function sendRequestForSearchHotel (inSelectedDate, outSelectedDate, selectHuman, value, setValue, setPostLoad, setEntries) {
     let age_man = 36;
     let dateIn = formatDate(inSelectedDate)
     let p  = '';
@@ -63,6 +63,8 @@ export async function sendRequestForSearchHotel (inSelectedDate, outSelectedDate
         }).then (r => {
             setValue(r["rooms"]);
             console.log(r["rooms"]);
+            setEntries(r["entries"]);
+            console.log(r["entries"]);
         }
     );
 }
@@ -73,4 +75,24 @@ async function getRequestVarieble (request, setPostLoad) {
     let data = await responce.json();
     setPostLoad(false);
     return data;
+}
+
+
+export const rigthNigthWord = (subDate) => { 
+    let t; 
+    if (subDate > 20) { 
+        t = subDate % 10;
+    } else { 
+        t = subDate; 
+    }
+    
+    if (t == 0) { 
+        return "ночей";
+    } else if (t == 1) { 
+        return "ночь";
+    } else if (t > 1 && t <= 4) { 
+        return "ночи";
+    } else if (t > 4) { 
+        return "ночей";
+    }
 }

@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import ChildPanel from "./ChildPanel.jsx";
 import {subDateDay, sendRequestForSearchHotel} from '../Utils.js';
 
-function SearchBar ({setResource, setPostLoad, setAmountPeople, setSubDate}) { 
+function SearchBar ({setResource, setPostLoad, setAmountPeople, setSubDate, setEntries}) { 
 
     const getGetMaxDate = (date) => { return new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1); }
     // Количество детей
@@ -17,9 +17,10 @@ function SearchBar ({setResource, setPostLoad, setAmountPeople, setSubDate}) {
     const [selectHuman, setSelectHuman] = useState(1);
 
     const selectAmountHuman = (val) => { 
-        sendRequestForSearchHotel(inSelectedDate, outSelectedDate, selectHuman, value, setResource, setPostLoad)
+        sendRequestForSearchHotel(inSelectedDate, outSelectedDate, selectHuman, value, setResource, setPostLoad, setEntries)
         setAmountPeople(parseInt(selectHuman) + value.length); 
         setSubDate(subDateDay(outSelectedDate, inSelectedDate));
+        
     }
 
     const checkDate = (date) => {

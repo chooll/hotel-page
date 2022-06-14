@@ -171,7 +171,7 @@ header {
 
 .cost-hotel {
     font-size: 18px;
-    color: #cfaf5d;
+    color: #dc8c36;
     font-weight: 500;
     text-align: right;
 }
@@ -214,10 +214,10 @@ header {
 
 .select-hotel {
     padding: 10px 20px 10px 20px;
-    border: 0 solid #cfaf5d;
+    border: 0 solid #dc8c36;
     font-size: 18px;
     border-radius: 5px;
-    background: #cfaf5d;
+    background: #dc8c36;
     color: white;
     font-weight: 600;
 }
@@ -513,4 +513,50 @@ button:hover{
     text-align: right;
     cursor: pointer;
     font-weight: 600;
+}
+
+.selected-mode { 
+    border-bottom: 3px solid #460083;
+    color: #460083;
+}
+
+.tarif { 
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+}
+
+.info-icon { 
+    background-color: rgb(73, 73, 73);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header-tarif { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.tarif-name { 
+    font-size: 18px;
+}
+
+.price-tarif { 
+    font-size: 20px;
+    color: #dc8c36;
+    font-weight: 500;
+}
+
+.info-about-tarif { 
+    padding: 20px 0px 20px 0px;
 }

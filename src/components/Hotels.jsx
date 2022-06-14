@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Carousel from "./Carousel.jsx";
 import ModalWin from "./ModalWin.jsx";
-
+import {rigthNigthWord} from "../Utils.js";
 function Hotels ({hotel, amountPeople, subDate}) {
 
     const [modalActive, setModalActive] = useState(false); 
@@ -17,24 +17,6 @@ function Hotels ({hotel, amountPeople, subDate}) {
     const add_i = "https://go.sochisirius.ru/pr_img/";
     const images = hotel["pic"]; 
 
-    const rigthNigthWord = (subDate) => { 
-        let t; 
-        if (subDate > 20) { 
-            t = subDate % 10;
-        } else { 
-            t = subDate; 
-        }
-        
-        if (t == 0) { 
-            return "ночей";
-        } else if (t == 1) { 
-            return "ночь";
-        } else if (t > 1 && t <= 4) { 
-            return "ночи";
-        } else if (t > 4) { 
-            return "ночей";
-        }
-    }
 
     return (
         <article className="order-content round-order-content">
