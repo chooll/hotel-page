@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar.jsx";
 import NameCompany from "./NameCompany.jsx";
 import Loader from "./Loader.jsx";
 import Tarif from "./Tarif.jsx";
+import FilterBlock from "./FilterBlock.jsx";
 
 function MainPanel() { 
     const [resource, setResource] = useState([]); 
@@ -11,8 +12,12 @@ function MainPanel() {
     const [subDate, setSubDate] = useState(0); 
     const [amountPeople, setAmountPeople] = useState(1); 
     const [entries, setEntries] = useState([]); 
-
+    const [activeFilter, setActiveFilter] = useState(false);
     const [modeOut, setModeOut] = useState("Номера");
+    const [filterSetting, setFilterSetting] = useState({"ot": 0, "do": 150000, "maxBed": 10});
+    const changeActiveStatus = (value, setValue) => { 
+        value ? setValue(false) : setValue(true); 
+    }
 
     const isResourceEmpty = (modeOut) => {
         
@@ -48,6 +53,8 @@ function MainPanel() {
                         <p className="b">Выбор</p>
                         <a className={modeOut == "Номера" ? "selected-mode a-panel-order" : "a-panel-order"} onClick={() => setModeOut("Номера")} href="#1">По номерам</a>
                         <a className={modeOut == "Тариф" ? "selected-mode a-panel-order" : "a-panel-order"} onClick={() => setModeOut("Тариф")} href="#2">По тарифам</a>
+                        <img className="icons" onClick={() => changeActiveStatus(activeFilter, setActiveFilter)} src="filter.png"/>
+                        <FilterBlock setActive={setActiveFilter} active={activeFilter} filter={filterSetting} setFilterSetting={setFilterSetting}/>
                     </div>
 
                     {
@@ -63,7 +70,16 @@ function MainPanel() {
                         {
                             modeOut == "Номера"
                             ?
-                                resource.map (room => outRoomsInfo(room))
+                                resource.map (room => {
+
+                                    if (room["max_bed"] <= filterSetting["maxBed"] && room["price"] >= parseInt(filterSetting["ot"]) && room["price"] <= parseInt(filterSetting["do"])) {
+                                        return (
+                                            <Hotels subDate={subDate} amountPeople={amountPeople} hotel={room} key={room["id_r"]}/>
+                                        )
+                                    }
+
+                                }
+                                )
                             :
                                 entries.map (ent => <Tarif entries={ent} subDate={subDate} amountPeople={amountPeople}/>)
                         }

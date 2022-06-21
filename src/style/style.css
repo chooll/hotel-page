@@ -111,6 +111,7 @@ header {
 
 .order-show-panel {
     padding: 30px;
+    position: relative;
 }
 
 .select-panel-order {
@@ -374,6 +375,11 @@ button:hover{
 
 .non-visible { 
     display: none;
+    opacity: 0;
+}
+
+.p-a { 
+    position: absolute;
 }
 
 .p-butt {
@@ -547,6 +553,11 @@ button:hover{
     height: 50px;
 }
 
+.icons { 
+    width: 19px;
+    cursor: pointer;
+}
+
 .tarif-name { 
     font-size: 18px;
 }
@@ -559,4 +570,37 @@ button:hover{
 
 .info-about-tarif { 
     padding: 20px 0px 20px 0px;
+}
+
+.filter-block { 
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    z-index: 10000;
+}
+
+
+
+.setting-block { 
+    padding: 10px 0px 10px 0px;
+}
+
+.name-setting-block { 
+    margin-bottom: 10px;
+}
+
+.input-cust { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    gap: 15px;
+}
+.custom-input { 
+    padding: 1px;
+    border: none;
+    border-bottom: 1px solid #460083;
+    text-align: right;
+    font-size: 16px;
+    
 }
