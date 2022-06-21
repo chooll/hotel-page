@@ -1,0 +1,124 @@
+.sort-panel {
+    display: flex;
+    align-items: center;
+    padding: 0px 40px 30px 40px;
+    gap: 0px;
+}
+
+.inp-date {
+    margin-top: 10px;
+    padding: 7px 20px 7px 20px;
+    border: 1px solid #e6e6eb;
+    font-family: 'Roboto',sans-serif;
+    background-color: white;
+    min-width: 100px;
+    max-width: 250px;
+}
+
+
+.sort-order-panel {
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #ededf1; 
+}
+
+.inp-date-block { 
+}
+
+.inp-promocode { 
+
+}
+
+.button-sort { 
+
+}
+
+.checkPromocode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: #ededf1;
+    padding: 6.5px 20px 6.5px 20px;
+    border: 1px solid #e6e6eb;
+    font-size: 14px;
+    height: 32px;
+}
+
+.search-button {
+    margin-top: 10px;
+    padding: 6px 20px 6px 40px;
+    font-weight: 500;
+    font-family: 'Roboto',sans-serif;
+    color: white;
+    background: #460083;
+    border: 0px solid #460083;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width: 1300px) {
+    .inp-date { 
+        min-width: 100px;
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .checkPromocode { 
+        label { 
+            display: none;
+        }
+    }
+
+    .search-button { 
+        .text { 
+            display: none;
+        }
+        padding: 6px 20px 6px 20px;
+        width: 100%;
+    }
+
+    .sort-panel {
+        padding: 0px 20px 10px 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sort-panel { 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 10px;
+    
+        .right-border-round { 
+            border-radius: 0px;
+        }
+
+        .inp-date { 
+            width: 100%;
+            min-width: none;
+            max-width: none;
+        }
+
+        .search-button { 
+            width: 100%;
+            justify-content: center;
+            padding: 6px 20px 6px 20px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .sort-panel { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+}

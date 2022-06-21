@@ -26,6 +26,13 @@ header {
     margin: auto;
 }
 
+@media screen and (max-width: 1300px) {
+    .container { 
+        max-width: 1000px;
+    }
+}
+
+
 .name-company {
     font-family: 'Montserrat Alternates';
     font-weight: 300;
@@ -35,6 +42,7 @@ header {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 10px;
 }
 
 
@@ -44,17 +52,12 @@ header {
 }
 
 .name-block {
-    padding: 30px;
+    padding: 20px;
+    font-size: 18px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
 }
 
-.sort__panel {
-    display: flex;
-    align-items: center;
-    padding: 0px 40px 30px 40px;
-    gap: 0px;
-    
-
-}
 
 .left-border-round {
     border-top-left-radius: 5px;
@@ -67,47 +70,11 @@ header {
 
 }
 
-.inp-date {
-    margin-top: 10px;
-    padding: 7px 20px 7px 20px;
-    border: 1px solid #e6e6eb;
-    font-family: 'Roboto',sans-serif;
-    background-color: white;
-}
-
-.checkPromocode {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    background-color: #ededf1;
-    padding: 6.5px 20px 6.5px 20px;
-    border: 1px solid #e6e6eb;
-    font-size: 14px;
-}
-
 .unvisible {
     color: white;
 }
 
-.search-button {
-    margin-top: 10px;
-    padding: 6px 20px 6px 40px;
-    font-weight: 500;
-    font-family: 'Roboto',sans-serif;
-    color: white;
-    background: #460083;
-    border: 0px solid #460083;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
 
-.sort-order-panel {
-    padding-bottom: 20px;
-    border-bottom: 3px dashed #ededf1; 
-}
 
 .order-show-panel {
     padding: 30px;
@@ -140,6 +107,19 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
+
+@media screen and (max-width: 1000px) { 
+    .container { 
+        max-width: 700px;
+    }
+
+    .order-show-content { 
+        display: grid;
+        grid-template-columns: none;
+    }
+}
+
 
 .order-content > img {
     box-sizing: border-box;
@@ -603,4 +583,48 @@ button:hover{
     text-align: right;
     font-size: 16px;
     
+}
+
+@media screen and (max-width: 700px) {
+    .container { 
+        max-width: 550px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container { 
+        max-width: 450px;
+    }
+
+    .b { 
+        display: none;
+    }
+
+    .p-a { 
+        right: 0px;
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 450) {
+    .container {
+        max-width: 420px;
+    }
+
+    .panel-setting-child { 
+        right: 0;
+    }
+
+}
+
+@media screen and (max-width: 420) {
+    .container {
+        max-width: 390px;
+    }
+    
+    .panel-setting-child { 
+        right: 0;
+    }
+
+
 }

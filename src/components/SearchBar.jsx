@@ -3,6 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ChildPanel from "./ChildPanel.jsx";
 import {subDateDay, sendRequestForSearchHotel} from '../Utils.js';
+import '../style/_search-panel.scss';
+
 
 function SearchBar ({setResource, setPostLoad, setAmountPeople, setSubDate, setEntries}) { 
 
@@ -20,7 +22,6 @@ function SearchBar ({setResource, setPostLoad, setAmountPeople, setSubDate, setE
         sendRequestForSearchHotel(inSelectedDate, outSelectedDate, selectHuman, value, setResource, setPostLoad, setEntries)
         setAmountPeople(parseInt(selectHuman) + value.length); 
         setSubDate(subDateDay(outSelectedDate, inSelectedDate));
-        
     }
 
     const checkDate = (date) => {
@@ -34,53 +35,56 @@ function SearchBar ({setResource, setPostLoad, setAmountPeople, setSubDate, setE
     }
 
     return (
-    <div className="sort__panel">
-        <div className="inp-date-start">
-            <p>Дата заезда</p>
-            <DatePicker  className="inp-date" 
-                selected={inSelectedDate} 
-                onChange={date => checkDate(date)}
-                dateFormat='dd - MM - yyyy'
-                minDate={new Date()}/> 
-        </div>
+            <div className="sort-order-panel">
+                <p className="name-block">Поиск по номера в отеле:</p>
+                <div className="sort-panel">
+                    <div className="inp-date-block">
+                        <p>Дата заезда</p>
+                        <DatePicker className="inp-date" 
+                            selected={inSelectedDate} 
+                            onChange={date => checkDate(date)}
+                            dateFormat='dd - MM - yyyy'
+                            minDate={new Date()}/> 
+                    </div>
 
-        <div className="inp-date-end">
-            <p>Дата выезда</p>
-            <DatePicker className="inp-date" 
-                selected={outSelectedDate}
-                onChange={date => outSetSelectedDate(date)}
-                dateFormat='dd - MM - yyyy'
-                minDate={getGetMaxDate(inSelectedDate)}/> 
-        </div>
+                    <div className="inp-date-block">
+                        <p>Дата выезда</p>
+                        <DatePicker className="inp-date" 
+                            selected={outSelectedDate}
+                            onChange={date => outSetSelectedDate(date)}
+                            dateFormat='dd - MM - yyyy'
+                            minDate={getGetMaxDate(inSelectedDate)}/> 
+                    </div>
 
-        <div className="inp-amount-people">
-            <p>Взрослые</p>
-            <select className="inp-date" onChange={event => setSelectHuman(event.target.value)}>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                    <div className="inp-date-block">
+                        <p>Взрослые</p>
+                        <select className="inp-date" onChange={event => setSelectHuman(event.target.value)}>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
 
-            </select>
-        </div>
+                        </select>
+                    </div>
 
-        <div className="inp-amount-people">
-            <p>Дети</p>
-            <ChildPanel value={value} setValue={setValue}/> 
-        </div>
+                    <div className="inp-date-block">
+                        <p>Дети</p>
+                        <ChildPanel value={value} setValue={setValue}/> 
+                    </div>
 
-        <div className="inp-promocode">
-            <p>Промокод</p>
-            <div className="checkPromocode">
-                <input type="checkbox" name="isPromo"/>
-                <label htmlFor="isPromo">Есть промокод?</label>
+                    <div className="inp-promocode">
+                        <p>Промокод</p>
+                        <div className="checkPromocode">
+                            <input type="checkbox" name="isPromo"/>
+                            <label htmlFor="isPromo">Есть промокод?</label>
+                        </div>
+                    </div>
+                    
+                    <div className="button-sort">
+                        <p className="unvisible">Поиск</p>
+                        <button onClick={() => selectAmountHuman()} className="search-button right-border-round"><div className="text">Найти номер &nbsp; &nbsp;</div><span className="material-symbols-outlined">search</span></button>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div className="button-sort">
-            <p className="unvisible">Поиск</p>
-            <button onClick={() => selectAmountHuman()} className="search-button right-border-round">Найти номер<span className="material-symbols-outlined">search</span></button>
-        </div>
-    </div>
     )
     
 } export default SearchBar;

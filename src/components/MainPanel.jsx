@@ -42,10 +42,7 @@ function MainPanel() {
             <div className="order-panel">
 
                 {/* Верхняя панель сортировки */}
-                <div className="sort-order-panel">
-                    <h3 className="name-block">Поиск по номера в отеле:</h3>
-                    <SearchBar setResource={setResource} setPostLoad={setPostLoad} setAmountPeople={setAmountPeople} setSubDate={setSubDate} setEntries={setEntries}/>
-                </div>
+                <SearchBar setResource={setResource} setPostLoad={setPostLoad} setAmountPeople={setAmountPeople} setSubDate={setSubDate} setEntries={setEntries}/>
 
                 {/* Панель выбора  */}
                 <div className="order-show-panel">
